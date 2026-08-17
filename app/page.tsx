@@ -1,10 +1,16 @@
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
-import { SiteHeader, SiteFooter } from '@/components/site-chrome'
+import { SiteHeader } from '@/components/site-chrome'
 import { PartnerFeatureCard } from '@/components/marketing-page'
 import { WornVsNewToggle } from '@/components/worn-vs-new-toggle'
 import { HeroSplitReveal } from '@/components/hero-split-reveal'
 import { categories } from '@/lib/site-data'
+import {
+  WhyWearGuard,
+  IndustriesTabSwitcher,
+  ServicesSplitBlock,
+  PremiumFooter,
+} from '@/components/homepage-sections'
 
 export const metadata = {
   title: 'WearGuard™ | Engineered Wear Solutions',
@@ -21,6 +27,9 @@ export default function HomePage() {
 
       {/* Partner Feature Banner (Exact Component from Screenshot) */}
       <PartnerFeatureCard />
+
+      {/* Section 1 — Why WearGuard value-prop */}
+      <WhyWearGuard />
 
       {/* Process Section */}
       <section className="process" id="process">
@@ -108,6 +117,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Section 2 — Industries tab-switcher */}
+      <IndustriesTabSwitcher />
+
       {/* Signature Worn vs. New Visualizer */}
       <section className="custom-section wrap" style={{ paddingBlock: '80px' }}>
         <div className="custom-copy">
@@ -154,6 +166,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Section 3 — Services + Industries split block */}
+      <ServicesSplitBlock />
+
       {/* Conversion Section */}
       <section className="conversion" id="quote">
         <div className="wrap">
@@ -165,7 +180,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <SiteFooter />
+      {/* Section 4 — Premium Footer */}
+      <PremiumFooter />
     </main>
   )
 }
